@@ -223,3 +223,9 @@ Para parar iniciar o serviço do samba manualmente:
 ```
 service samba-ad-dc start
 ```
+
+# Adicionar DC secundário
+
+```
+samba-tool domain join teste.local DC -U"TESTE\administrator" --option="interfaces=lo enp0s3" --option="bind interfaces only=yes" --dns-backend=SAMBA_INTERNAL --option="dns forwarder=8.8.8.8" --option='idmap_ldb:use rfc2307 = yes'
+```
