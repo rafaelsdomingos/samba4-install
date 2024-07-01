@@ -221,7 +221,7 @@ systemctl enable samba-ad-dc
 Para parar iniciar o serviço do samba manualmente:
 
 ```
-service samba-ad-dc start
+systemctl start samba-ad-dc
 ```
 
 ## Adicionar DC secundário
