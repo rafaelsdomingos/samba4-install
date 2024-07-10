@@ -224,6 +224,29 @@ Para parar iniciar o serviço do samba manualmente:
 systemctl start samba-ad-dc
 ```
 
+## Configuração do DNS
+
+Desabilite resolver:
+
+```
+sudo systemctl disable --now systemd-resolved && sudo unlink /etc/resolv.conf
+
+```
+
+
+Crie o novo arquivo **/etc/resolv.conf**:
+
+```
+nano /etc/resolv.conf
+
+```
+
+```
+nameserver  172.18.3.10
+search secult.local
+```
+
+
 ## Adicionar DC secundário
 
 ```
